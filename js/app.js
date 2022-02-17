@@ -74,7 +74,7 @@ function savingsAmount(){
     if(savePercent < 0 || isNaN(savePercent)){
         saveAmountError.style.display = 'block';
         saveError.style.display = 'none';
-    }else if(balance < savingsAmount){
+    }else if(balance < savingsAmount || balance <= 0){
         saveError.style.display = 'block';
         saveAmountError.style.display = 'none';
     }
