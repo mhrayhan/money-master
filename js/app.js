@@ -9,8 +9,9 @@ function getInputValue(inputId){
     const clothError = document.getElementById('clothError');
     const expenseError = document.getElementById('expenseError');
 
-function calculate(){
 
+
+function calculate(){
     const income = getInputValue('income');
     const food = getInputValue('food');
     const rent = getInputValue('rent');
@@ -57,10 +58,9 @@ function calculate(){
         incomeError.style.display = 'none';
         expenseError.style.display = 'none';
     }
-
-
-
 }
+const saveError = document.getElementById('saveError');
+const saveAmountError = document.getElementById('saveAmountError');
 function savingsAmount(){
     const balanceField = document.getElementById('balance').innerText;
     const balance = parseFloat(balanceField);
@@ -71,11 +71,18 @@ function savingsAmount(){
     const savingsAmount = income / 100 * savePercent;
     const remainingBalance = balance - savingsAmount;
 
-    if(balance < savingsAmount){
-        alert('warning');
-    }else{
+    if(savePercent < 0 || isNaN(savePercent)){
+        saveAmountError.style.display = 'block';
+        saveError.style.display = 'none';
+    }else if(balance < savingsAmount){
+        saveError.style.display = 'block';
+        saveAmountError.style.display = 'none';
+    }
+    else{
         document.getElementById('savings-amount').innerText = savingsAmount;
         document.getElementById('remaining-balance').innerText = remainingBalance;
+        saveAmountError.style.display = 'none';
+        saveError.style.display = 'none';
     }
 
 
@@ -87,6 +94,7 @@ function savingsAmount(){
 
 document.getElementById('calculate-button').addEventListener('click', function(){
     calculate();
+    console.log(calculate());
 })
 
 document.getElementById('save').addEventListener('click', function(){
