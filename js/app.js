@@ -7,6 +7,7 @@ function getInputValue(inputId){
     const foodError = document.getElementById('foodError');
     const rentError = document.getElementById('rentError');
     const clothError = document.getElementById('clothError');
+    const expenseError = document.getElementById('expenseError');
 
 function calculate(){
 
@@ -22,21 +23,30 @@ function calculate(){
        foodError.style.display = 'none';
        rentError.style.display = 'none';
        clothError.style.display = 'none';
+    }else if(income < sumExpense){
+        expenseError.style.display = 'block';
+        incomeError.style.display = 'none';
+        foodError.style.display = 'none';
+        rentError.style.display = 'none';
+        clothError.style.display = 'none';
     }else if(food < 0 || isNaN(food)){
         foodError.style.display = 'block';
         incomeError.style.display = 'none';
         rentError.style.display = 'none';
        clothError.style.display = 'none';
+       expenseError.style.display = 'none';
     }else if(rent < 0 || isNaN(rent)){
         rentError.style.display = 'block';
         foodError.style.display = 'none';
         incomeError.style.display = 'none';
         clothError.style.display = 'none';
+        expenseError.style.display = 'none';
     }else if(clothe < 0 || isNaN(clothe)){
         clothError.style.display = 'block';
         rentError.style.display = 'none';
         foodError.style.display = 'none';
         incomeError.style.display = 'none';
+        expenseError.style.display = 'none';
     }
     else{
         document.getElementById('total-expense').innerText = sumExpense;
@@ -45,6 +55,7 @@ function calculate(){
         rentError.style.display = 'none';
         foodError.style.display = 'none';
         incomeError.style.display = 'none';
+        expenseError.style.display = 'none';
     }
 
 

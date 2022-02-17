@@ -24,6 +24,12 @@
     margin-bottom: 0;
     display: none;
 }
+#expenseError{
+    font-size: 12px;
+    color: red;
+    margin-bottom: 0;
+    display: none;
+}
 .heading{
     color: #0127ff;
     font-family: 'Kaisei Decol', serif;

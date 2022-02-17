@@ -17,7 +17,7 @@
                     <img src="img/Screenshot_3.jpg" alt="" class="w-100 h-100 rounded-2 p-2" height="">
                 </div>
             </div>
-            <div class="col-md-4 pb-5 shadow px-5 pt-3  mx-auto">
+            <div class="col-md-4 pb-5 shadow px-2 pt-3  mx-auto">
                 <h4 class="text-center">Income</h4>
                 <div class="row g-3 align-items-center justify-content-center mt-2">
                     <div class="col-2">
@@ -63,11 +63,14 @@
                         <p class="text-center " id="foodError">&#9888; Food value is invalid</p>
                         <p class="text-center " id="rentError">&#9888; Rent value is invalid</p>
                         <p class="text-center " id="clothError">&#9888; Clothes value is invalid</p>
+                        <p class="text-center " id="expenseError">&#9888; Your Income is lower than income</p>
                     </div>
                 </div>
                 <div class="row align-items-center justify-content-center mt-2">
                     
-                    <button id="calculate-button" class="btn btn-info">Calculate</button>
+                    <div class="col-10">
+                        <button id="calculate-button" class="btn btn-info w-100">Calculate</button>
+                    </div>
                 </div>
                 <h5 class="mt-3 text-center">Total Expense: <span id="total-expense">00</span></h5>
                 <h5 class="mt-3 text-center">Balance: <span id="balance">00</span></h5>
